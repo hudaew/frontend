@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Kanban Board</h1>
+
+  <div class="board">
+
+    <div class="column" id="todo" data-col="todo">
+      <div class="col-header">
+        <span class="col-title">To Do</span>
+        <span class="col-count" id="count-todo">0</span>
+      </div>
+      <div class="cards" id="cards-todo"></div>
+      <div class="add-card">
+        <input type="text" placeholder="New task…" id="input-todo" />
+        <button onclick="addCard('todo')">+</button>
+      </div>
+    </div>
+
+    <div class="column" id="inprogress" data-col="inprogress">
+      <div class="col-header">
+        <span class="col-title">In Progress</span>
+        <span class="col-count" id="count-inprogress">0</span>
+      </div>
+      <div class="cards" id="cards-inprogress"></div>
+      <div class="add-card">
+        <input type="text" placeholder="New task…" id="input-inprogress" />
+        <button onclick="addCard('inprogress')">+</button>
+      </div>
+    </div>
+
+    <div class="column" id="done" data-col="done">
+      <div class="col-header">
+        <span class="col-title">Done</span>
+        <span class="col-count" id="count-done">0</span>
+      </div>
+      <div class="cards" id="cards-done"></div>
+      <div class="add-card">
+        <input type="text" placeholder="New task…" id="input-done" />
+        <button onclick="addCard('done')">+</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
