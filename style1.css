@@ -1,0 +1,156 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f13;
+  color: #e8e7f2;
+  min-height: 100vh;
+  padding: 48px 40px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b6a80;
+  margin-bottom: 40px;
+}
+
+/* ── Stats row ── */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.stat-card {
+  background: #18181f;
+  border: 1px solid #2a2a35;
+  border-radius: 10px;
+  padding: 14px 20px;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b6a80;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f0eff8;
+}
+
+/* ── Canvas ── */
+.chart-wrap {
+  background: #18181f;
+  border: 1px solid #2a2a35;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 220px;
+}
+
+/* Tooltip */
+#tooltip {
+  position: absolute;
+  background: #2a2a38;
+  border: 1px solid #3a3a50;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #f0eff8;
+  pointer-events: none;
+  display: none;
+  white-space: nowrap;
+}
+
+/* ── Range slider ── */
+.slider-section {
+  background: #18181f;
+  border: 1px solid #2a2a35;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.slider-label {
+  font-size: 12px;
+  color: #6b6a80;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.slider-wrap {
+  position: relative;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.track-bg {
+  position: absolute;
+  left: 0; right: 0;
+  height: 4px;
+  background: #2a2a38;
+  border-radius: 4px;
+}
+
+.track-fill {
+  position: absolute;
+  height: 4px;
+  background: #7f77dd;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+input[type="range"] {
+  position: absolute;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #7f77dd;
+  border: 2px solid #0f0f13;
+  cursor: pointer;
+  pointer-events: all;
+  transition: transform 0.15s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 13px;
+  color: #9998b0;
+}
+
+.range-values span { font-weight: 600; color: #7f77dd; }
