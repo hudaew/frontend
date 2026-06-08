@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Accordion + Dark Mode</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <h1>FAQ</h1>
+    <button class="theme-btn" id="theme-btn">
+      <span id="theme-icon">☀️</span>
+      <span id="theme-label">Light Mode</span>
+    </button>
+  </div>
+
+  <div class="accordion">
+
+    <div class="panel">
+      <input type="radio" name="faq" id="q1"/>
+      <label for="q1">
+        What is the CSS grid-template-rows trick?
+        <span class="arrow">▾</span>
+      </label>
+      <div class="panel-body">
+        <div>
+          <p>Animating height: auto is not possible in CSS. Instead, set <code>grid-template-rows: 0fr</code> on a grid container and transition it to <code>1fr</code>. The inner child needs <code>min-height: 0</code> to allow it to collapse fully.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <input type="radio" name="faq" id="q2"/>
+      <label for="q2">
+        How does the CSS-only open/close work?
+        <span class="arrow">▾</span>
+      </label>
+      <div class="panel-body">
+        <div>
+          <p>A hidden <code>&lt;input type="radio"&gt;</code> is linked to the visible label via <code>for</code>/<code>id</code>. When clicked, the label toggles the input's <code>:checked</code> state. A CSS sibling selector <code>input:checked ~ .panel-body</code> then changes the grid row size — no JavaScript needed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <input type="radio" name="faq" id="q3"/>
+      <label for="q3">
+        Why use radio inputs instead of checkboxes?
+        <span class="arrow">▾</span>
+      </label>
+      <div class="panel-body">
+        <div>
+          <p>Radio inputs share a <code>name</code> group, so selecting one automatically deselects all others. This enforces the "only one panel open at a time" behaviour without any JavaScript — the browser handles mutual exclusion natively.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <input type="radio" name="faq" id="q4"/>
+      <label for="q4">
+        How does the dark mode toggle persist?
+        <span class="arrow">▾</span>
+      </label>
+      <div class="panel-body">
+        <div>
+          <p>On page load, the script checks <code>localStorage</code> for a saved theme. If none is found, it reads the OS preference via <code>window.matchMedia('(prefers-color-scheme: dark)')</code>. The chosen theme is stored as a <code>data-theme</code> attribute on <code>&lt;html&gt;</code>, and CSS variables switch automatically.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <input type="radio" name="faq" id="q5"/>
+      <label for="q5">
+        Can I open a panel by default?
+        <span class="arrow">▾</span>
+      </label>
+      <div class="panel-body">
+        <div>
+          <p>Yes — simply add the <code>checked</code> attribute to the corresponding radio input in your HTML: <code>&lt;input type="radio" name="faq" id="q1" checked/&gt;</code>. That panel will be open on load without any JavaScript.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
