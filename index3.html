@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infinite Scroll + Search</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="page-header">
+    <div>
+      <h1>User Directory <span class="badge" id="count-badge">0 users</span></h1>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="Search by name or country…"/>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="no-results" id="no-results">No users match your search.</div>
+  <div id="sentinel"></div>
+  <div class="status" id="status">Scroll down to load more</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
