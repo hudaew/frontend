@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Range Slider + Chart</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <h1>Monthly Sales</h1>
+  <p class="subtitle">Drag the handles to filter the range</p>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Selected Min</div>
+      <div class="stat-value" id="stat-min">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Selected Max</div>
+      <div class="stat-value" id="stat-max">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Bars in Range</div>
+      <div class="stat-value" id="stat-count">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Range Total</div>
+      <div class="stat-value" id="stat-total">—</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <canvas id="chart"></canvas>
+    <div id="tooltip"></div>
+  </div>
+
+  <div class="slider-section">
+    <div class="slider-label">Filter Range</div>
+    <div class="slider-wrap">
+      <div class="track-bg"></div>
+      <div class="track-fill" id="track-fill"></div>
+      <input type="range" id="range-min" min="0" max="100" value="0" step="1"/>
+      <input type="range" id="range-max" min="0" max="100" value="100" step="1"/>
+    </div>
+    <div class="range-values">
+      <span>Min: <span id="val-min">0</span></span>
+      <span>Max: <span id="val-max">100</span></span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
